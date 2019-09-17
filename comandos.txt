@@ -1,0 +1,5 @@
+ng --version
+ng new nome_do_projeto
+ng serve --open
+ng build (Chama o build que gera arquivos estáticos .js)
+ng generate component nome_componente
