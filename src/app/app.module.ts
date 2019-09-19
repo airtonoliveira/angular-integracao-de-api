@@ -13,8 +13,11 @@ import { UsuarioComponent } from './usuario/usuario.component';
     AppComponent,
     MenuComponent,
     FooterComponent,
-    HomeComponent,
-    UsuarioComponent
+    //Após criados os módulos para controlar os componentes
+    //foi removida a declaração destes componentes para não serem carregados
+    //Pois agora serão chamados (on demand, ao chamar suas rotas) por seus respectivos módulos.
+    //HomeComponent,
+    //UsuarioComponent
   ],
   imports: [
     BrowserModule,
