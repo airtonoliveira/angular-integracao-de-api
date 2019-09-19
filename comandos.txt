@@ -3,3 +3,6 @@ ng new nome_do_projeto
 ng serve --open
 ng build (Chama o build que gera arquivos estáticos .js)
 ng generate component nome_componente
+
+//Cria o módulo de rotas do Angular
+ng generate module app-routing --flat --module=app
