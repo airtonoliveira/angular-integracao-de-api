@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/usuario';
+import { Usuario } from 'src/app/usuario/usuario';
 
 @Component({
   selector: 'usuario-cadastro',
