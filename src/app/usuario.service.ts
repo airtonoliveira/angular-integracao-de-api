@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from './usuario/usuario';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 //Permite injeção de dependencia
 @Injectable({
@@ -7,23 +9,19 @@ import { Usuario } from './usuario/usuario';
 })
 export class UsuarioService {
 
-  constructor() { }
+  private url = 'http://localhost:8080/usuario';
 
-  public listaUsuarios():Usuario[]{
-    return [
-      {
-        nome:"Aírton",
-        email:"airton@email.com"
-      },
-      {
-        nome:"José",
-        email:"jose@email.com"
-      },
-      {
-        nome:"João",
-        email:"joao@email.com"
-      }
-    ];
+  constructor(
+    private http:HttpClient
+    
+    ) { }
+
+   public salvar(usuario:Usuario):Observable<Usuario>{
+        return this.http.post<Usuario>(this.url, usuario);
+   }
+
+  public listaUsuarios():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.url);
   }
 
   public getUsuario():Usuario{

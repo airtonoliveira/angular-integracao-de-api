@@ -17,7 +17,14 @@ export class UsuarioComponent implements OnInit {
 
   ngOnInit() {
     //this.usuario=this.usuarioService.getUsuario();
-    this.usuarios=this.usuarioService.listaUsuarios();
+    this.usuarioService.listaUsuarios().subscribe(
+      response => {
+        this.usuarios = response;
+      }, 
+      error => {
+        alert("Algo deu errado");
+      }
+    )
   }
 
 }
