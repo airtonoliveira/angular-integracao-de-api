@@ -16,15 +16,35 @@ export class UsuarioComponent implements OnInit {
   constructor(private usuarioService:UsuarioService) { }
 
   ngOnInit() {
-    //this.usuario=this.usuarioService.getUsuario();
+    this.listaUsuario()
+  }
+
+  public listaUsuario() {
     this.usuarioService.listaUsuarios().subscribe(
       response => {
-        this.usuarios = response;
-      }, 
+        this.usuarios = response
+      },
       error => {
-        alert("Algo deu errado");
+        alert("Algo deu errado")
       }
     )
   }
+
+  public deletar(id: string) {
+
+    // this.confirmationService.confirm({
+    //   message: 'Você tem certeza que deseja deletar?',
+    //   accept: () => {
+        this.usuarioService.delete(id).subscribe(
+          r => {
+            this.listaUsuario()
+          }
+        )
+   //   }
+    //}
+    //)  
+  };
+
+
 
 }

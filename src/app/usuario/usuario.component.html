@@ -7,10 +7,12 @@
     <tr>
       <th>Nome</th>
       <th>Email</th>
+      <th>Ações</th>
     </tr>
     <tr *ngFor="let usuario of usuarios">
         <td> {{usuario.nome}} </td>
         <td> {{usuario.email}} </td>
+        <td> <button  (click)="deletar(usuario.id)">X</button> </td>
       </tr>
   </table>
   <button routerLink="add">

@@ -17,6 +17,11 @@ export class UsuarioService {
     
     ) { }
 
+    public delete(id:string):Observable<any>{
+      return this.http.delete(this.url + "/" + id)
+    }
+   
+
    public salvar(usuario:Usuario):Observable<Usuario>{
         return this.http.post<Usuario>(this.url, usuario);
    }
