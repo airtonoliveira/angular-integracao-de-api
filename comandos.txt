@@ -12,3 +12,7 @@ ng generate module app-routing --flat --module=app
 
 ng generate service usuario
 ng generate class usuario
+
+//roda projeto no ambiente de homologação
+// -c (configuration)
+ng serve -c hom

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Usuario } from './usuario/usuario';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 //Permite injeção de dependencia
 @Injectable({
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  private url = 'http://localhost:8080/usuario';
+  private url = environment.host + 'usuario';
 
   constructor(
     private http:HttpClient
